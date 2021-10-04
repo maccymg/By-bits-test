@@ -1,11 +1,12 @@
 import axios from 'axios'
+import { getToken } from './auth'
 
 const baseUrl = 'https://api.bybits.co.uk'
 
 function headers() {
   return {
     headers: { 
-      Authorization: 'Bearer MuYW1hem9uYXdzLmNvbVwvZXUtd2VzdC0zX3JkdldSMGs',
+      Authorization: `Bearer ${getToken()}`,
       environment: 'mock',
       ContentType: 'application/json',
     },
@@ -13,9 +14,9 @@ function headers() {
 }
 
 export function getDetails() {
-  return axios.post(`${baseUrl}/policys/details`, formdata, headers())
+  return axios.post(`${baseUrl}/policys/details`, headers())
 }
 
-export function loginUser() {
-  return axios.post(`${baseUrl}/auth/token`, formdata)
+export function loginUser(formdata) {
+  return axios.post(`${baseUrl}/auth/token`, formdata, headers())
 }
