@@ -14,7 +14,7 @@ function headers() {
 }
 
 export function getDetails() {
-  return axios.post(`${baseUrl}/policys/details`, headers())
+  return axios.get(`${baseUrl}/policys/details`, headers())
 }
 
 export function loginUser(formdata) {
