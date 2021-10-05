@@ -21,9 +21,7 @@ function Login() {
     event.preventDefault()
 
     try {
-      console.log(formdata)
       const { data } = await loginUser(formdata)
-      console.log(data.access_token)
       setToken(data.access_token)
       history.push('/policy-details')
     } catch (err) {
@@ -31,29 +29,43 @@ function Login() {
     }
   }
 
-  console.log(formdata)
+
 
   return (
     <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Username"
-          onChange={handleChange}
-          name="username"
-          value={formdata.username}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-          name="password"
-          value={formdata.password}
-        />
-        <div className="field">
-          <button type="submit" className="button is-fullwidth is-warning">Log Me In!</button>
+      <main className="base-container">
+        <div className="header">Login</div>
+        <div className="form-content">
+          <form onSubmit={handleSubmit} className="form">
+            <div className="form-group">
+              <label className="label">
+                <input
+                  className="input"
+                  placeholder="Username"
+                  onChange={handleChange}
+                  name="username"
+                  value={formdata.username}
+                />
+              </label>
+            </div>
+            <div className="form-group">
+              <label className="label">
+                <input
+                  className="input"
+                  type="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  name="password"
+                  value={formdata.password}
+                />
+              </label>
+            </div>
+            <div className="form-footer">
+              <button type="submit" className="button">Log Me In</button>
+            </div>
+          </form>
         </div>
-      </form>
+      </main>
     </>
   )
 }
