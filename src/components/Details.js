@@ -35,11 +35,11 @@ function Details() {
               <div className="details-sub-heading">Log Out</div>
             </Link>
           </header>
-          <div className="details-container">
+          <main className="details-container">
             <div className="details-header">
               <div className="header">My Policy</div>
             </div>
-            <main className="policy-details">
+            <div className="policy-details">
               <p className="details-sub-heading">Policy Reference:</p>
               <p className="details-info">{details.policy.policy_reference}</p>
 
@@ -51,8 +51,8 @@ function Details() {
 
               <p className="details-sub-heading">Address:</p>
               <p className="details-info">{`${details.policy.address.line_1}, ${details.policy.address.line_2}, ${details.policy.address.postcode}`}</p>
-            </main>
-          </div>
+            </div>
+          </main>
         </>
         :
         <div className="details-container">
