@@ -63,7 +63,7 @@ export function loginUser(formdata) {
 Having created the basic structure needed for the App I began to build the API requests. Using axios to help I built out both the getDetails and loginUser functions. Having earlier visualised what headers the request needed I was able to create a headers function so that I could pass the information with the request. Having thought that the Authorization was necessary for the get request I set about building the functions necessary to set and get the token in auth.js. This would be set when the request was called in Login.js and therefore if the user tried to access the page through the URL without logging in the token wouldn't match and it would fail. This method seemed to have worked having used the console to check the token in local storage, however when trying to access the page without the token through the URL it didn't stop me like I expected. Going back to Insomnia I toggled the Authorization header off and to my surprise the request still went through. This was an error with the API as it in fact doesn’t require an authorization header with the token explained in the instructions. Keeping the same method, I added in a condition when accessing the API in Details.js to nullify this mistake and make it work. This is something that would need fixing if it wasn’t a mock API.
 
 
-![Picture](Details with token.png)
+![Picture](Details-with-token.png)
 
 ```JavaScript
 // Capturing the formdata and logging In
