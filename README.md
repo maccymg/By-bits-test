@@ -11,6 +11,9 @@ In this test, I was tasked with creating a simple web application.
 - Use the two Policy API endpoint
 
 
+Time Taken: Roughly 4 hours
+
+
 ### Dependencies:
 
 Used create react app with GA template:
